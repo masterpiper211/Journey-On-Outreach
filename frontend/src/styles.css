@@ -1,0 +1,47 @@
+:root{ --bg:#fff; --accent:#0b74de; --muted:#6b7280; --card:#fff; --success:#15803d; --danger:#dc2626; }
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#111}
+.app-header{background:var(--accent); color:white; padding:1rem; text-align:center}
+main{padding:1rem}
+/* Mobile-first utilities */
+.container{max-width:720px;margin:0 auto}
+
+/* Form card */
+.form-card{background:var(--card); border-radius:10px; padding:1rem; box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.field{margin-bottom:1rem; display:block}
+.field .label{display:block; font-weight:600; margin-bottom:0.5rem}
+input[type="text"], textarea{width:100%; padding:0.6rem; border:1px solid #e5e7eb; border-radius:8px; font-size:1rem}
+textarea{min-height:80px}
+
+/* Segmented control for risk */
+.segmented{display:flex; gap:0.5rem}
+.seg-item{flex:1; text-align:center; padding:0.5rem 0.6rem; border:1px solid #e5e7eb; border-radius:8px; background:#fafafa; cursor:pointer; font-weight:600}
+.seg-item input{display:none}
+.seg-item.active{background:var(--accent); color:white; border-color:var(--accent)}
+
+/* checkboxes grid */
+.checkbox-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:0.5rem}
+.checkbox-item{display:flex; gap:0.5rem; align-items:center; padding:0.5rem; border:1px solid #f3f4f6; border-radius:8px; background:#fff}
+.checkbox-item input{transform:scale(1.1)}
+
+/* GPS */
+.gps-row{display:flex; align-items:center; justify-content:space-between}
+.gps-info{margin-top:0.5rem}
+
+/* actions */
+.actions{display:flex; gap:0.5rem}
+.btn{padding:0.6rem 0.9rem; border-radius:8px; border:0; cursor:pointer; font-weight:600}
+.btn-primary{background:var(--accent); color:white}
+.btn-secondary{background:#eef2ff; color:var(--accent); border:1px solid #dbeafe}
+
+/* messages */
+.message{margin-top:0.8rem; padding:0.6rem 0.8rem; border-radius:8px}
+.message.success{background: #ecfdf5; color:var(--success)}
+.message.error{background: #fff1f2; color:var(--danger)}
+
+/* larger screens */
+@media(min-width:640px){
+  .form-card{padding:1.25rem}
+  .checkbox-grid{grid-template-columns:repeat(3,1fr)}
+}
