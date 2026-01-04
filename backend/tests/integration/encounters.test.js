@@ -81,7 +81,7 @@ function waitForHealth(timeout = 5000){
 
 async function run(){
   console.log('Starting backend server for encounters integration test on port', PORT)
-  const child = spawn('node', ['src/index.js'], { cwd: BACKEND_DIR, env: { ...process.env, PORT }, stdio: ['ignore','pipe','pipe'] })
+  const child = spawn('node', ['src/index.js'], { cwd: BACKEND_DIR, env: { ...process.env, PORT, NODE_ENV: 'test' }, stdio: ['ignore','pipe','pipe'] })
 
   child.stdout.on('data', d => process.stdout.write(`[server] ${d}`))
   child.stderr.on('data', d => process.stderr.write(`[server] ${d}`))
